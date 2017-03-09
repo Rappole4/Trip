@@ -5,8 +5,8 @@ class JourneysController < ApplicationController
   # GET /journeys
   # GET /journeys.json
   def index
-    @journeys = Journey.all
-    @journey = Journey.last
+    @journeys = current_user.journeys
+    @journey = @journeys.last
   end
 
   # GET /journeys/1
