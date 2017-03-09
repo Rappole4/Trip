@@ -25,14 +25,14 @@ var map;
 // 
 // initiating the map
 function initMap() {
-	map = new google.maps.Map(document.getElementById('map'));
+	if (document.getElementById('map')) { map = new google.maps.Map(document.getElementById('map'));
 	directionsService = new google.maps.DirectionsService();
 	directionsDisplay = new google.maps.DirectionsRenderer();
-	directionsDisplay.setMap(map);
+	directionsDisplay.setMap(map)};
 }
 // Calculating the route 
 function calcRoute() {
-	var start = document.getElementById('origin').value;
+	if (document.getElementById('map')) { var start = document.getElementById('origin').value;
 	var end = document.getElementById('destination').value;
 	var mode = document.getElementById('mode').value;
 	var request = {
@@ -44,10 +44,10 @@ function calcRoute() {
 		if (status == 'OK') {
 			directionsDisplay.setDirections(result);
 		}
-	});
+	})};
 }
 function TravelTime() {
-	var service = new google.maps.DistanceMatrixService();
+	if (document.getElementById('map')) { var service = new google.maps.DistanceMatrixService();
 	return service.getDistanceMatrix(
   {
    //  arrivalTime: Date,
@@ -59,17 +59,17 @@ function TravelTime() {
   	console.log(response,status)
   	document.getElementById('travelDistance').innerText = response.rows[0].elements[0].distance.text
   	document.getElementById('travelDuration').innerText = response.rows[0].elements[0].duration.text
-  })
+  })}
 }
 // EVENTS ######################################################################################
 // 
 // 
 document.addEventListener("DOMContentLoaded",function(){
-	initMap();
+	if (document.getElementById('map')) { initMap();
 	calcRoute();
 	document.getElementById("search").addEventListener("submit",function(event){
 		event.preventDefault();
 		calcRoute();
 		TravelTime();
-	});
+	})};
 });
