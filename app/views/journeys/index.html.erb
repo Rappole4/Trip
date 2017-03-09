@@ -47,7 +47,11 @@
         <input type="submit" value="Search" />
       </div>
     </form>
-
+    <div id="TimeDistance">
+      <h4>Travel Time and Distance</h4>
+      <h6 id="travelDistance"></h6>
+      <h6 id="travelDuration"></h6>
+    </div>
     <div id="map"></div>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLEMAPSAPI'] %>"></script>
