@@ -19,7 +19,7 @@
         <td><%= link_to 'Edit', edit_journey_path(journey) %></td>
         <td><%= link_to 'Destroy', journey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
+    <% end if @journeys %>
   </tbody>
 </table>
 
@@ -28,11 +28,11 @@
     <form id="search">
       <div class="field_set">
         <label for="origin">Origin</label>
-        <input id="origin" name="origin" value="<%= @journey.start_address %>" />
+        <input id="origin" name="origin" value="<%= @journey.start_address if @journey %>" />
       </div>
       <div class="field_set">
         <label for="destination">Destination</label>
-        <input id="destination" name="destination" value="<%= @journey.end_address %>" />
+        <input id="destination" name="destination" value="<%= @journey.end_address if @journey %>" />
       </div>
       <div class="field_set">
         <label for="mode">Mode</label>
