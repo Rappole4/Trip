@@ -26,10 +26,15 @@ class JourneysController < ApplicationController
   # POST /journeys
   # POST /journeys.json
   def create
-    @journey = Journey.new(journey_params)
-
+    Journey.transaction do
+      @journey = Journey.create(journey_params)
+      UserJourney.create(
+        user_id: current_user.id,
+        journey_id: @journey.id
+      )
+    end
     respond_to do |format|
-      if @journey.save
+      if @journey.id
         format.html { redirect_to @journey, notice: 'Journey was successfully created.' }
         format.json { render :show, status: :created, location: @journey }
       else
