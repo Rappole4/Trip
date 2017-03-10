@@ -23,7 +23,7 @@ var map;
 // FUNCTIONS ######################################################################################
 // 
 // 
-// initiating the map
+// Initiating the map
 function initMap() {
 	if (document.getElementById('map')) { 
 		map = new google.maps.Map(document.getElementById('map'));
@@ -50,6 +50,7 @@ function calcRoute() {
 		})
 	};
 }
+// Determining travel time and distance
 function TravelTime() {
 	if ((document.getElementById('map'))&&(document.getElementById('TimeDistance'))) { 
 		var service = new google.maps.DistanceMatrixService();
@@ -80,4 +81,9 @@ document.addEventListener("DOMContentLoaded",function(){
 			TravelTime();
 		})
 	};
+
+	//click search button on load of journeys page (to show distance and time)
+	$(document).ready(function() {
+		$('#make').click();
+	});
 });
