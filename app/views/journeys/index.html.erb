@@ -1,57 +1,58 @@
-  <p id="notice"><%= notice %></p>
+<!--   <p id="notice"><%= notice %></p> -->
+<div id="map"></div>
+<div class="fullmenu"> 
+<img id="logo" src="/assets/logo.png"> 
+<div class="menubottom"> 
+  <h1>Journeys</h1>
+      <table>
+        <thead>
+          <tr>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-<h1>Journeys</h1>
+        <tbody>
+          <% @journeys.each do |journey| %>
+            <tr>
+              <th><%= journey.start_address %></th>/
+              <th> --> </th> 
+              <th><%= journey.end_address %></th>
+              <td><%= link_to 'Show', journey %></td>
+              <td><%= link_to 'Edit', edit_journey_path(journey) %></td>
+              <td><%= link_to 'Destroy', journey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end if @journeys %>
+        </tbody>
+      </table>
+      <br>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @journeys.each do |journey| %>
-      <tr>
-        <th><%= journey.start_address %></th>/
-        <th> --> </th> 
-        <th><%= journey.end_address %></th>
-        <td><%= link_to 'Show', journey %></td>
-        <td><%= link_to 'Edit', edit_journey_path(journey) %></td>
-        <td><%= link_to 'Destroy', journey, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end if @journeys %>
-  </tbody>
-</table>
-
-<br>
-
-    <form id="search">
-      <div class="field_set">
-        <label for="origin">Origin</label>
-        <input id="origin" name="origin" value="<%= @journey.start_address if @journey %>" />
-      </div>
-      <div class="field_set">
-        <label for="destination">Destination</label>
-        <input id="destination" name="destination" value="<%= @journey.end_address if @journey %>" />
-      </div>
-      <div class="field_set">
-        <label for="mode">Mode</label>
-        <select id="mode" name="mode">
-          <option value="DRIVING">Driving</option>
-          <option value="WALKING">Walking</option>
-          <option value="TRANSIT">Transit</option>
-          <option value="BICYCLING">Biking</option>
-        </select>
-      </div>
-      <div class="field_set">
-        <input type="submit" value="Search" />
-      </div>
-    </form>
-    <div id="TimeDistance">
-      <h4>Travel Time and Distance</h4>
-      <h6 id="travelDistance"></h6>
-      <h6 id="travelDuration"></h6>
-    </div>
-    <div id="map"></div>
-
+          <form id="search">
+            <div class="field_set">
+              <label for="origin">Origin</label>
+              <input id="origin" name="origin" value="<%= @journey.start_address if @journey %>" />
+            </div>
+            <div class="field_set">
+              <label for="destination">Destination</label>
+              <input id="destination" name="destination" value="<%= @journey.end_address if @journey %>" />
+            </div>
+            <div class="field_set">
+              <label for="mode">Mode</label>
+              <select id="mode" name="mode">
+                <option value="DRIVING">Driving</option>
+                <option value="WALKING">Walking</option>
+                <option value="TRANSIT">Transit</option>
+                <option value="BICYCLING">Biking</option>
+              </select>
+            </div>
+            <div class="field_set">
+              <input type="submit" value="Search" />
+            </div>
+          </form>
+          <div id="TimeDistance">
+            <h4>Travel Time and Distance</h4>
+            <h6 id="travelDistance"></h6>
+            <h6 id="travelDuration"></h6>
+          </div>
+   </div>
+</div>
     <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLEMAPSAPI'] %>"></script>

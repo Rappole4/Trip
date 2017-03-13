@@ -1,3 +1,23 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.newjourney{
+	margin-top: 100px;
+	margin-left: 80px;	 
+	p{
+		font-size: 20px;
+	}
+	h1{
+		font-family: 'Supermercado One', cursive;
+	}
+}
+h2{
+	font-family: 'Supermercado One', cursive;
+}
+
+#logo{
+margin: 20px;
+opacity: 0.7;
+display: inline-block;
+float: left;
+}
