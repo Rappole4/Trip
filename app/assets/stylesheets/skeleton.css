@@ -151,8 +151,8 @@ h6 { font-size: 1.5rem; line-height: 1.6;  letter-spacing: 0; }
   h6 { font-size: 1.5rem; }
 }
 
-p {
-  margin-top: 0; }
+/*p {
+  margin-top: 0; }*/
 
 
 /* Links
@@ -350,7 +350,6 @@ blockquote,
 dl,
 figure,
 table,
-p,
 ul,
 ol,
 form {

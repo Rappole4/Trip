@@ -1,10 +1,46 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+// #background{
+// 	height: 100%;
+// 	width: 100%;
+// 	position: fixed;
+// 	z-index: -100;
+// }
+body{
+	background-size: 100%;
+}
+#search{
+	background-color: rgba(255, 255, 255, 0.35);
+	margin: 20px;
+	margin-left: 100px;
+	width: 350px;
+	float: left;
+	clear: left;
+	h4{
+		font-family: 'Supermercado One', cursive;
+	}
+	p{
+	color: black;
+	font-size: 120%
+	}
+	
+}
 #map {
-height: 60%;
-width: 60%;
+height: 927px;
+width: 1400px;
+display: inline-block;
+float: right;
+}
+
+
+#logo{
+margin: 20px;
+margin-left: 95px;
+margin-bottom: 40px;
+opacity: 0.7;
+display: inline-block;
+float: left;
 }
 
 html, body {
@@ -16,4 +52,8 @@ padding: 0;
 #autocomplete {
 	width: 60%;
 	height: 25px;
+}
+.text{
+	margin-top: 25px;
+	background-color: lightgrey;
 }

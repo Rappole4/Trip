@@ -6,29 +6,35 @@
     <meta charset="utf-8">
   </head>
   <body>
-    <form id="search">
-      <div class="field_set">
-        <label for="origin">Origin</label>
-        <input id="origin" name="origin" value="NYC, NY" />
-      </div>
-      <div class="field_set">
-        <label for="destination">Destination</label>
-        <input id="destination" name="destination" value="San Diego, CA" />
-      </div>
-      <div class="field_set">
-        <label for="mode">Mode</label>
-        <select id="mode" name="mode">
-          <option value="DRIVING">Driving</option>
-          <option value="WALKING">Walking</option>
-          <option value="TRANSIT">Transit</option>
-          <option value="BICYCLING">Biking</option>
-        </select>
-      </div>
-      <div class="field_set">
-        <input type="submit" value="Search" />
-      </div>
-    </form>
     <div id="map"></div>
+    <div class="text">
+      <img id="logo" src="/assets/logo.png">
+        <form id="search" align="center">  
+          <h4>
+          Lets Take -Uh- Trip
+          </h4>
+          <div class="field_set">     
+            <label for="origin"><p>Origin</p></label>
+            <input id="origin" name="origin" value="NYC, NY" />
+          </div>
+          <div class="field_set">
+            <label for="destination"><p>Destination</p></label>
+            <input id="destination" name="destination" value="San Diego, CA" />
+          </div>
+          <div class="field_set">
+            <label for="mode"><p>Mode</p></label>
+            <select id="mode" name="mode">
+              <option value="DRIVING">Driving</option>
+              <option value="WALKING">Walking</option>
+              <option value="TRANSIT">Transit</option>
+              <option value="BICYCLING">Biking</option>
+            </select>
+          </div>
+          <div class="field_set">
+            <input id="submitbutton" type="submit" value="Search" />
+          </div>
+        </form>
+    </div>
     <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLEMAPSAPI'] %>"></script>
   </body>
 </html>
