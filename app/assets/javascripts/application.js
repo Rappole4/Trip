@@ -80,15 +80,14 @@ document.addEventListener("DOMContentLoaded",function(){
 			calcRoute();
 			TravelTime();
 		});
-		//Side project
+		
+// Trip button for Old Journeys page		
 		var btns = document.getElementsByClassName('trip');
 		for (i=0; i< btns.length; i++){
-			btns[i].addEventListener('click', function(){
-				var child = document.getElementsByClassName('org');
-				for(j=0; j < child.length; j++){
-					console.log(document.getElementsByClassName('org')[j].innerText);
-					console.log([i]);
-				}
+			btns[i].addEventListener('click', function(event){
+				document.getElementById('origin').value =( $(".org",$(event.target).parent().parent()).html() );
+				document.getElementById('destination').value =( $(".des",$(event.target).parent().parent()).html() );
+				document.getElementById('make').click();
 			})
 		};
 	};
