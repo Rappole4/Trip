@@ -35,7 +35,7 @@ class JourneysController < ApplicationController
     end
     respond_to do |format|
       if @journey.id
-        format.html { redirect_to @journey, notice: 'Journey was successfully created.' }
+        format.html { redirect_to journeys_path, notice: 'Journey was successfully created.' }
         format.json { render :show, status: :created, location: @journey }
       else
         format.html { render :new }
@@ -49,7 +49,7 @@ class JourneysController < ApplicationController
   def update
     respond_to do |format|
       if @journey.update(journey_params)
-        format.html { redirect_to @journey, notice: 'Journey was successfully updated.' }
+        format.html { redirect_to journeys_path, notice: 'Journey was successfully updated.' }
         format.json { render :show, status: :ok, location: @journey }
       else
         format.html { render :edit }
