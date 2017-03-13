@@ -79,7 +79,18 @@ document.addEventListener("DOMContentLoaded",function(){
 			event.preventDefault();
 			calcRoute();
 			TravelTime();
-		})
+		});
+		//Side project
+		var btns = document.getElementsByClassName('trip');
+		for (i=0; i< btns.length; i++){
+			btns[i].addEventListener('click', function(){
+				var child = document.getElementsByClassName('org');
+				for(j=0; j < child.length; j++){
+					console.log(document.getElementsByClassName('org')[j].innerText);
+					console.log([i]);
+				}
+			})
+		};
 	};
 
 	//click search button on load of journeys page (to show distance and time)
