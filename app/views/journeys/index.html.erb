@@ -15,7 +15,7 @@
           <% @journeys.each do |journey| %>
             <tr>
               <td><input class="trip" type="button" value="Trip" /></td>
-              <th class="org"><%= journey.start_address %></th>/
+              <th class="org"><%= journey.start_address %></th>
               <th> --> </th> 
               <th class="des"><%= journey.end_address %></th>
               <td><%= link_to 'Edit', edit_journey_path(journey) %></td>
